@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Boda · Rodrigo & Alejandra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=Nunito:wght@300;400;500&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+<audio id="musica-invitacion" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ══ SOBRE OVERLAY ══ -->
+<div id="sobre-wrapper">
+    <div class="sobre-container" onclick="abrirSobre()">
+        <div class="sobre-contenido">
+            <div class="instruccion-click">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                </svg>
+                Toca para abrir
+            </div>
+            <br>
+            <!-- SOBRE: reemplaza src con tu imagen de sobre cerrado -->
+            <img src="sobre cerrado.png" id="img-sobre" alt="Sobre de invitación">
+            <div class="instruccion-click">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white"></svg>
+                Invitación dirigida para:
+            </div>
+            <div id="nombre-invitado-sobre">Cargando invitación...</div>
+        </div>
+    </div>
+</div>
+
+<!-- PARTÍCULAS ANIMADAS -->
+<div id="petals-container" aria-hidden="true"></div>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="inicio">
+  <div class="sparkles" id="sparkles"></div>
+
+  <!-- ADORNOS: reemplaza src con tus imágenes decorativas -->
+  <div class="rosa-corner rosa-tl"><img src="rosas 2.png" alt="" class="adorno-img"/></div>
+  <div class="rosa-corner rosa-tr"><img src="rosas.png" alt="" class="adorno-img"/></div>
+  <div class="rosa-corner rosa-bl"><img src="rosas.png" alt="" class="adorno-img"/></div>
+  <div class="rosa-corner rosa-br"><img src="rosas 2.png" alt="" class="adorno-img"/></div>
+
+  <p class="hero-presents">
+    
+    <span style="font-size:1.4rem;color:var(--plateado);font-family:'Cinzel',serif;letter-spacing:.2em;">tienen el honor <br>de <br>invitarte a celebrar</span>
+  </p>
+  <div class="gold-line"></div>
+  <p class="hero-sub">Su Boda</p>
+  <br>
+  <br>
+
+  <!-- NOMBRE NOVIOS: reemplaza src con tu imagen de nombres -->
+  <img src="nombres.png" class="hero-name-img" alt="Israel & Yoselin"/>
+
+   <img src="copas.png" alt="Copas" style="width:120px;height:auto;margin:1.5rem auto 4.5rem;display:block;"/>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <span>Scroll</span>
+    <svg viewBox="0 0 18 18" fill="none" stroke="var(--dorado)" stroke-width="1.5">
+      <path d="M9 3v12M4 11l5 5 5-5"/>
+    </svg>
+  </div>
+</section>
+
+<hr class="divisor-elegante">
+
+<!-- ══════════ FRASE ══════════ -->
+<section class="frase-section" id="frase">
+  <div class="frase-inner">
+    <p class="section-label">Un momento especial</p>
+    <div class="gold-line" style="margin:.4rem auto 1.2rem;"></div>
+    <span class="frase-comilla">"</span>
+    <p class="frase-texto">
+      "Nuestra historia es hermosa, pero será completa si estás con nosotros. Queremos celebrar este gran día rodeados de las personas que más amamos. <br>¡Te esperamos!"
+    </p>
+    <br>
+    <br>
+    <div class="gold-line" style="margin:1.2rem auto .6rem;"></div>
+    <p class="frase-dedicatoria">Rodrigo    &amp;  Alejandra</p>
+  </div>
+</section>
+
+<hr class="divisor-elegante">
+
+<!-- ══════════ CUENTA REGRESIVA ══════════ -->
+<div class="countdown-section" id="countdown-section">
+  <p class="hero-date">Miercoles · 12 de Abril del 2028</p>
+  <br>
+  <img src="reloj.png" alt="Copas" style="width:120px;height:auto;margin:2.5rem auto -1rem;display:block;"/>
+  <div class="ornament"><div class="ornament-diamond"></div></div>
+  <p class="countdown-label">Faltan</p>
+  <div class="countdown-grid" id="countdown-grid">
+    <div class="countdown-box"><span class="countdown-num" id="cd-dias">--</span><span class="countdown-unit">Días</span></div>
+    <div class="countdown-box"><span class="countdown-num" id="cd-horas">--</span><span class="countdown-unit">Horas</span></div>
+    <div class="countdown-box"><span class="countdown-num" id="cd-min">--</span><span class="countdown-unit">Minutos</span></div>
+    <div class="countdown-box"><span class="countdown-num" id="cd-seg">--</span><span class="countdown-unit">Segundos</span></div>
+  </div>
+  <br>
+  <h2 class="countdown-title">...para la boda</h2>
+  <p class="event-today" id="event-today">✨ ¡Hoy es el gran día de 
+    Rodrigo &amp; Alejandra! ✨</p>
+</div>
+
+<hr class="divisor-elegante">
+
+<!-- ══════════ EL EVENTO ══════════ -->
+<section class="evento-section" id="evento">
+  <p class="section-label">El gran día</p>
+  <h2 class="section-title">Programa del Evento</h2>
+  <div class="ornament"><div class="ornament-diamond"></div></div>
+  <div class="evento-cards">
+
+    <!-- CEREMONIA CIVIL -->
+    <div class="evento-card">
+      <div class="evento-icon">📜</div>
+      <p class="evento-tipo">Ceremonia Civil</p>
+      <div class="gold-line" style="margin:.5rem auto;"></div>
+      <p class="evento-hora">8:00 <span style="font-size:1.2rem;">pm</span></p>
+      <p class="evento-lugar">Parroquia de San Jose</p>
+      <p class="evento-dir">Durango, Dgo.</p>
+      <!-- Reemplaza el href con el link real de Google Maps del salón -->
+      <a class="btn-maps" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Cómo llegar
+      </a>
+    </div>
+
+    <!-- EVENTO SOCIAL -->
+    <div class="evento-card">
+      <div class="evento-icon">🥂</div>
+      <p class="evento-tipo">Evento Social</p>
+      <div class="gold-line" style="margin:.5rem auto;"></div>
+      <p class="evento-hora">9:00 <span style="font-size:1.2rem;">pm</span></p>
+      <p class="evento-lugar">Salon Los Tulipanes</p>
+      <p class="evento-dir">Durango, Dgo.</p>
+      <!-- Mismo salón: puedes reutilizar el mismo link de Maps -->
+      <a class="btn-maps" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Cómo llegar
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divisor-elegante">
+
+<!-- ══════════ DRESS CODE ══════════ -->
+<section class="dresscode-section" id="dresscode">
+  <p class="section-label">Vestimenta</p>
+  <h2 class="section-title">Código de Vestimenta</h2>
+  <div class="ornament"><div class="ornament-diamond"></div></div>
+  <p style="font-size:.95rem;color:var(--gris);max-width:420px;margin:0 auto;text-align:center;line-height:1.7;">
+    Acudir al evento en un estilo <strong>Formal Elegante</strong>. Preferentemente las damas usar combinacion de colores que se muestran a continuacíon:
+  </p>
+  <div class="palette">
+    <div class="swatch-wrap"><div class="swatch" style="background:#1a1a1a;"></div><p class="swatch-label">Negro</p></div>
+    <div class="swatch-wrap"><div class="swatch" style="background:#c9a84c;"></div><p class="swatch-label">Dorado</p></div>
+    <div class="swatch-wrap"><div class="swatch" style="background:#ffffff;border:1px solid #ddd;"></div><p class="swatch-label">Blanco</p></div>
+  </div>
+  <p class="dresscode-note">✦ Colores de la paleta del evento para guía referencial</p>
+</section>
+
+<hr class="divisor-elegante">
+
+
+<!-- ══════════ MOMENTOS ESPECIALES ══════════ -->
+<section class="momentos-section" id="momentos-especiales">
+    <p class="section-label">Un momento a solas</p>
+    <h2 class="section-title">Momentos Especiales</h2>
+    <div class="ornament"><div class="ornament-diamond"></div></div>
+    <div class="momentos-card">
+        <img src="silueta.png" alt="silueta" style="width:160px;height:auto;margin:-1rem auto 1rem; margin-left:3.5rem ;"/>
+        <span class="momentos-icono">✦</span>
+        <p class="momentos-texto">
+            Agradecemos tu comprensión al asistir con tus niños; sin embargo, para disfrutar la noche,
+            nos encantaría que a la hora de la ceremonia, vals y ciertos momentos de adultos, se mantengan
+            en su respectivo lugar.
+        </p>
+    </div>
+</section>
+
+<hr class="divisor-elegante">
+
+<!-- ══════════ SUGERENCIA DE REGALOS ══════════ -->
+<section class="regalos-section" id="regalos">
+    <p class="section-label">Con cariño</p>
+    <h2 class="section-title">Sugerencia de Regalos</h2>
+    <div class="ornament"><div class="ornament-diamond"></div></div>
+    <div class="regalos-container">
+        <div class="regalos-card">
+            <img src="regalo.png" alt="Copas" style="width:220px;height:auto;margin:-2rem auto -1rem;display:block;"/>
+            <span class="regalos-icono">✦</span>
+            <p class="regalos-leyenda">
+                "Tu presencia es el regalo más importante para nosotros. Si deseas obsequiarnos
+                algo más, con mucho cariño lo recibiremos el día del evento."
+            </p>
+        </div>
+    </div>
+
+    <!-- ══ VERSIÓN MÁS ARMADA (respaldo) ══
+    Descomenta y edita si Israel y Yoselin definen mesa de regalos en tienda
+    o datos de transferencia. Puedes usar esto en vez de la tarjeta de arriba.
+
+    <div class="regalos-container">
+        <div class="regalos-card">
+            <span class="regalos-icono">🎁</span>
+            <p class="regalos-leyenda">
+                "Contamos con mesa de regalos en [Nombre de la tienda].
+                Puedes consultar la lista de artículos en el siguiente enlace."
+            </p>
+            <a class="btn-maps" href="#" target="_blank" rel="noopener" style="margin-top:.5rem;">
+                Ver mesa de regalos
+            </a>
+        </div>
+        <div class="regalos-card">
+            <span class="regalos-icono">💳</span>
+            <p class="regalos-leyenda">
+                "Si prefieres obsequiarnos algo en efectivo, con gusto lo recibimos
+                por transferencia a la siguiente cuenta:"
+            </p>
+            <p class="regalos-leyenda" style="font-size:1rem;font-style:normal;">
+                Banco: [Nombre del banco]<br>
+                Cuenta: [Número de cuenta]<br>
+                A nombre de: [Nombre del titular]
+            </p>
+        </div>
+    </div>
+    -->
+</section>
+
+<hr class="divisor-elegante">
+
+<!-- ══════════ TICKET / PASE ══════════ -->
+<section class="pase-section" id="pase">
+    <p class="section-label">Tu Pase de Entrada</p>
+    <div class="ornament"><div class="ornament-diamond"></div></div>
+
+    <div class="ticket-card">
+
+        <!-- FRANJA LATERAL -->
+        <div class="ticket-lateral">
+            <span class="ticket-lateral-text">PASE DE ENTRADA</span>
+        </div>
+
+        <!-- CUERPO PRINCIPAL -->
+        <div class="ticket-body">
+
+            <!-- Cabecera -->
+            <div class="ticket-header">
+                <p class="ticket-supra">✦ Boda ✦</p>
+               <img src="nombres.png" alt="Ejemplo" style="width: 300px; display: block; margin: 1px auto;">
+
+                <p class="ticket-fecha-lugar">12 · 04 · 2028 &nbsp;-&nbsp; Salon Los Tulipanes</p>
+            </div>
+
+            <!-- Línea punteada de corte -->
+            <div class="ticket-cut">
+                <div class="ticket-notch ticket-notch-l"></div>
+                <div class="ticket-dashes"></div>
+                <div class="ticket-notch ticket-notch-r"></div>
+            </div>
+
+            <!-- Datos del invitado -->
+            <div class="ticket-datos">
+                <div class="ticket-dato-group">
+                    <p class="ticket-dato-label">Invitado(a) / Familia</p>
+                    <p id="ticket-invitado" class="ticket-dato-valor nombre-largo">—</p>
+                </div>
+
+                <div class="ticket-fila-baja">
+                    <div class="ticket-dato-group">
+                        <p class="ticket-dato-label">Pases</p>
+                        <p id="ticket-pases" class="ticket-dato-valor ticket-dato-grande">—</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pie -->
+            <p class="ticket-pie">Favor de presentar este pase al ingresar al evento</p>
+
+        </div>
+    </div>
+</section>
+
+<hr class="divisor-elegante">
+
+<!-- ══════════ RSVP ══════════ -->
+<section id="rsvp" class="rsvp-section">
+    <div id="rsvp-container">
+        <h2 class="section-title2">Confirma tu Asistencia</h2>
+        <br>
+        <br>
+
+        <div id="rsvp-form-content">
+            <div class="rsvp-botones">
+                <button id="btn-si" class="rsvp-btn rsvp-btn-si" onclick="seleccionarRespuesta('Sí asistiré')">
+                    <span class="rsvp-btn-icon">💍</span>
+                    <span class="rsvp-btn-texto">¡Sí asistiré!</span>
+                </button>
+                <button id="btn-no" class="rsvp-btn rsvp-btn-no" onclick="seleccionarRespuesta('No podré asistir')">
+                    <span class="rsvp-btn-icon">💌</span>
+                    <span class="rsvp-btn-texto">No podré asistir</span>
+                </button>
+            </div>
+
+            <button class="btn-confirmar-rsvp" onclick="enviarRSVP()">
+                Confirmar Asistencia
+            </button>
+            <p class="rsvp-nota">Tu respuesta nos ayuda a una mejor organización.<br>Recuerda solo mandar el formulario una sola vez.</p>
+        </div>
+
+        <div id="rsvp-success" style="display:none;" class="rsvp-success-container">
+            <div class="success-card">
+                <div class="success-icon-wrapper">
+                    <span id="success-emoji" class="success-icon">💍</span>
+                    <div class="success-pulse"></div>
+                </div>
+                <h3 id="success-title" class="success-title">¡Confirmación Recibida!</h3>
+                <p id="success-text" class="success-text">
+                    Muchas gracias, hemos registrado tu respuesta correctamente.
+                </p>
+                <div class="success-divider"></div>
+                <p id="success-footer" class="success-footer"></p>
+            </div>
+        </div>
+
+        <!-- GOOGLE FORM OCULTO — reemplaza el action y los entry.XXXXXXX con los de tu nuevo form -->
+        <form id="form-google-oculto"
+              method="POST"
+              target="iframe-envio"
+              action="https://docs.google.com/forms/d/e/ejemplo link-----------/formResponse"
+              style="display:none;">
+            <input type="hidden" name="entry.XXXXXx" id="f-nombre">
+            <input type="hidden" name="entry.XXXXXXX" id="f-pases">
+            <input type="hidden" name="entry.XXXXXXX" id="f-asistencia">
+        </form>
+        <iframe name="iframe-envio" id="iframe-envio" style="display:none;"></iframe>
+
+    </div>
+</section>
+
+<hr class="divisor-elegante">
+
+<!-- PADRINOS (DESHABILITADOS — descomenta si los necesitas después) -->
+<!--
+<section class="padrinos-section" id="padrinos">
+    <p class="section-label">Padrinos</p>
+    <div class="ornament"><div class="ornament-diamond"></div></div>
+    <div class="padrinos-container">
+        <p class="padrinos-texto">Con el acompañamiento de nuestros padrinos:</p>
+        <div class="padrinos-nombres">
+            <h3 class="padrino-nombre">Nombre Padrino</h3>
+            <span class="padrinos-and">&</span>
+            <h3 class="padrino-nombre">Nombre Madrina</h3>
+        </div>
+    </div>
+</section>
+<hr class="divisor-elegante">
+-->
+
+<button id="btn-musica" onclick="toggleMusica()">
+    <span id="musica-icon">🔊</span>
+</button>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <img class="footer-firma" src="Firma 3.png" alt="By Angel Trejo · AT Design Studio"/>
+  <p class="footer-copy">
+    © 2026 AT Design Studio  <br> <a href="https://www.facebook.com/AngelTrejo88" class="footer-link" style="font-size:.7rem;color:#ffff">By: Angel Trejo</a> <br> Todos los derechos reservados<br>
+    Durango, Dgo. · México 🇲🇽
+  </p>
+</footer>
+
+<!-- ══ BOTÓN VOLVER AL INICIO ══ -->
+<button id="btn-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver al inicio">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
+  </svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
