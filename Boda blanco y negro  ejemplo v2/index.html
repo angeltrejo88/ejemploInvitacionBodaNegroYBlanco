@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+    <title>Boda · Sofía &amp; Alejandro (Ejemplo)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=Nunito:wght@300;400;500&display=swap" rel="stylesheet"/>
+    <link rel="preload" as="image" href="sobre cerrado.png">
+    <link rel="preload" as="image" href="nombre3.png">
+    <link rel="preload" as="audio" href="musica.mp3">
+    <link rel="stylesheet" href="style.css">
+
+    <meta property="og:title" content="Boda Sofía & Alejandro">
+    <meta property="og:description" content="¡Llegó el día de nuestra boda! Dos almas, un destino.">
+    <meta property="og:image" content="https://res.cloudinary.com/ogfus9h8/image/upload/v1793945815/Create_digital_invitation_advert__1bad71dd_2K.jpg">
+</head>
+<body>
+
+<audio id="musica-invitacion" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ══ SOBRE OVERLAY ══ -->
+<div id="sobre-wrapper">
+    <div class="sobre-bg" aria-hidden="true">
+        <img src="fondo-sobre.jpg" alt="" class="sobre-bg-img" onerror="this.style.display='none'">
+        <div class="sobre-bg-overlay"></div>
+    </div>
+
+    <div class="sobre-container" onclick="abrirSobre()">
+        <div class="sobre-contenido">
+
+            <div class="sobre-bienvenida-bloque">
+                <p class="sobre-bienvenida-label">Boda · 24 · 10 · 2027</p>
+                <br><br>
+                <p class="sobre-bienvenida">
+                    Con el corazón lleno de alegría, queremos compartir contigo el día más especial de nuestras vidas
+                </p>
+            </div>
+
+            <div class="sobre-art">
+                <img src="sobre cerrado.png" id="img-sobre" alt="Sobre de invitación">
+            </div>
+
+            <div class="sobre-invitado">
+                <p class="sobre-invitado-label">Invitación especialmente para</p>
+                <div id="nombre-invitado-sobre">Familia Invitada / Nombre del Invitado</div>
+                <div class="instruccion-click">✦ Toca el sobre para abrir ✦</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- PARTÍCULAS ANIMADAS -->
+<div id="petals-container" aria-hidden="true"></div>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="inicio">
+  <div class="sparkles" id="sparkles"></div>
+
+  <div class="rosa-corner rosa-tl"><img src="rosas 2.png" alt="" class="adorno-img"/></div>
+  <div class="rosa-corner rosa-tr"><img src="rosas.png" alt="" class="adorno-img"/></div>
+  <div class="rosa-corner rosa-bl"><img src="rosas.png" alt="" class="adorno-img"/></div>
+  <div class="rosa-corner rosa-br"><img src="rosas 2.png" alt="" class="adorno-img"/></div>
+
+  <p class="hero-presents">
+    <span style="font-size:1.4rem;color:var(--plateado);font-family:'Cinzel',serif;letter-spacing:.2em;">tienen el honor <br>de <br>invitarte a celebrar</span>
+  </p>
+  <div class="gold-line"></div>
+  <p class="hero-sub">Su Boda</p>
+  <br>
+
+  <img src="nombre.png" class="hero-name-img" alt="Sofía & Alejandro"/>
+
+  <img src="argollas.png" alt="Copas" loading="lazy" decoding="async" style="width:150px;height:auto;margin:1.5rem auto 4.5rem;display:block;"/>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <span>Scroll</span>
+    <svg viewBox="0 0 18 18" fill="none" stroke="var(--dorado)" stroke-width="1.5">
+      <path d="M9 3v12M4 11l5 5 5-5"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ══════════ FOTO DE PORTADA ══════════ -->
+<section class="foto-portada reveal-obs" id="foto-portada">
+    <div class="foto-portada-marco">
+        <img src="portada.jpg" alt="Sofía y Alejandro" loading="lazy" decoding="async">
+    </div>
+    <div class="foto-portada-linea"></div>
+</section>
+
+<hr class="divisor-elegante">
+
+<!-- ══════════ FRASE ══════════ -->
+<section class="frase-section" id="frase">
+  <div class="frase-inner">
+    <p class="section-label">Un momento especial</p>
+    <div class="gold-line" style="margin:.4rem auto 1.2rem;"></div>
+    <br><br><br>
+    <p class="frase-texto">
+      Amar no es mirarnos el uno al otro, sino mirar juntos en la misma dirección;
+      es hermoso tener con quien compartir todo.
+    </p>
+    <br><br>
+    <div class="gold-line" style="margin:1.2rem auto .6rem;"></div>
+    <p class="frase-dedicatoria">Sofía &amp; Alejandro</p>
+  </div>
+</section>
+
+<!-- FOTO 1 -->
+<div class="foto-reveal foto-vertical reveal-obs reveal-izq">
+    <div class="foto-reveal-marco">
+        <div class="foto-reveal-img"><img src="foto_1.jpg" alt="Sofía y Alejandro" loading="lazy" decoding="async"></div>
+    </div>
+</div>
+
+<!-- ══════════ PADRES DE LOS NOVIOS ══════════ -->
+<section class="padres-section" id="padres">
+  <div class="padres-inner">
+    <div class="ornament"><div class="ornament-diamond"></div></div>
+    <p class="padres-intro reveal reveal-obs">
+      Acompáñanos a celebrar nuestra unión, junto con nuestros padres:
+    </p>
+
+    <div class="padres-bloque reveal reveal-obs" style="--delay:.15s;">
+      <p class="padres-etiqueta">Padres de la novia</p>
+      <p class="padres-nombre">Nombre del Padre de la Novia</p>
+      <p class="padres-nombre">Nombre de la Madre de la Novia</p>
+    </div>
+
+    <div class="gold-line reveal reveal-obs" style="margin:1.6rem auto;--delay:.3s;"></div>
+
+    <div class="padres-bloque reveal reveal-obs" style="--delay:.45s;">
+      <p class="padres-etiqueta">Padres del novio</p>
+      <p class="padres-nombre">Nombre del Padre del Novio</p>
+      <p class="padres-nombre">Nombre de la Madre del Novio</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divisor-elegante">
+
+<!-- ══════════ CUENTA REGRESIVA ══════════ -->
+<div class="countdown-section" id="countdown-section">
+  <p class="hero-date">Sábado · 24 de Octubre del 2027</p>
+  <br>
+  <img src="reloj.png" alt="Reloj" loading="lazy" decoding="async" style="width:120px;height:auto;margin:2.5rem auto -1rem;display:block;"/>
+  <div class="ornament"><div class="ornament-diamond"></div></div>
+  <p class="countdown-label" id="cd-label">Faltan</p>
+  <div class="countdown-grid" id="countdown-grid">
+    <div class="countdown-box"><span class="countdown-num" id="cd-dias">--</span><span class="countdown-unit">Días</span></div>
+    <div class="countdown-box"><span class="countdown-num" id="cd-horas">--</span><span class="countdown-unit">Horas</span></div>
+    <div class="countdown-box"><span class="countdown-num" id="cd-min">--</span><span class="countdown-unit">Minutos</span></div>
+    <div class="countdown-box"><span class="countdown-num" id="cd-seg">--</span><span class="countdown-unit">Segundos</span></div>
+  </div>
+  <br>
+  <h2 class="countdown-title" id="cd-titulo">para nuestra boda</h2>
+  <p class="event-today" id="event-today">✨ ¡Hoy es el día de nuestra boda! ✨</p>
+</div>
+
+<hr class="divisor-elegante">
+
+<!-- FOTO 2 -->
+<div class="foto-reveal foto-horizontal reveal-obs reveal-der">
+    <div class="foto-reveal-marco">
+        <div class="foto-reveal-img"><img src="foto_2.jpg" alt="Sofía y Alejandro" loading="lazy" decoding="async"></div>
+    </div>
+</div>
+
+<hr class="divisor-elegante">
+
+<!-- ══════════ EL EVENTO ══════════ -->
+<section class="evento-section" id="evento">
+  <p class="section-label">El gran día</p>
+  <h2 class="section-title">Lugar del Evento</h2>
+  <div class="ornament"><div class="ornament-diamond"></div></div>
+  <div class="evento-cards">
+
+    <div class="evento-card">
+      <div class="evento-icon">🥂</div>
+      <p class="evento-tipo">Evento Social</p>
+      <div class="gold-line" style="margin:.5rem auto;"></div>
+      <p class="evento-hora">7:00 <span style="font-size:1.2rem;">pm</span></p>
+      <p class="evento-lugar">Jardín / Salón de Eventos Las Palmas</p>
+      <p class="evento-dir">Av. del Evento #123, Col. Centro<br> Ciudad de Ejemplo</p>
+      <a class="btn-maps" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Cómo llegar
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOTO 6 -->
+<div class="foto-reveal foto-vertical reveal-obs reveal-der">
+    <div class="foto-reveal-marco">
+        <div class="foto-reveal-img"><img src="foto_6.jpg" alt="Sofía y Alejandro" loading="lazy" decoding="async"></div>
+    </div>
+</div>
+
+<hr class="divisor-elegante">
+
+<!-- ══════════ DRESS CODE ══════════ -->
+<section class="dresscode-section" id="dresscode">
+  <p class="section-label">Vestimenta</p>
+  <h2 class="section-title">Código de Vestimenta</h2>
+  <div class="ornament"><div class="ornament-diamond"></div></div>
+  <p style="font-size:.95rem;color:var(--gris);max-width:420px;margin:0 auto;text-align:center;line-height:1.7;">
+    Acudir al evento en un estilo <strong>Formal Elegante</strong>. 
+    <br><br>
+    Preferentemente NO usar los colores que se muestran a continuación:
+  </p>
+  <div class="palette">
+    <div class="swatch-wrap"><div class="swatch" style="background:#1a1a1a;"></div><p class="swatch-label">Negro</p></div>
+    <div class="swatch-wrap"><div class="swatch" style="background:#ec9d09;"></div><p class="swatch-label">Cafe</p></div>
+    <div class="swatch-wrap"><div class="swatch" style="background:#ffffff;border:1px solid #ddd;"></div><p class="swatch-label">Blanco</p></div>
+  </div>
+  <p class="dresscode-note">✦ Colores de la paleta del evento para guía referencial</p>
+</section>
+
+<hr class="divisor-elegante">
+
+<!-- FOTO 3 -->
+<div class="foto-reveal foto-vertical reveal-obs reveal-izq">
+    <div class="foto-reveal-marco">
+        <div class="foto-reveal-img"><img src="foto_3.jpg" alt="Sofía y Alejandro" loading="lazy" decoding="async"></div>
+    </div>
+</div>
+
+<hr class="divisor-elegante">
+
+<!-- ══════════ MOMENTOS ESPECIALES ══════════ -->
+<section class="momentos-section" id="momentos-especiales">
+    <p class="section-label">Un momento a solas</p>
+    <h2 class="section-title">Momentos Especiales</h2>
+    <div class="ornament"><div class="ornament-diamond"></div></div>
+    <div class="momentos-card">
+        <img src="silueta.png" alt="silueta" loading="lazy" decoding="async" style="width:160px;height:auto;margin:-1rem auto 1rem; margin-left:3.5rem ;"/>
+        <span class="momentos-icono">✦</span>
+        <p class="momentos-texto">
+            Nos encantan los niños, pero hemos decidido celebrar nuestra unión en un ambiente exclusivo para adultos.
+        </p>
+    </div>
+</section>
+
+<hr class="divisor-elegante">
+
+<!-- ══════════ SUGERENCIA DE REGALOS ══════════ -->
+<section class="regalos-section" id="regalos">
+    <p class="section-label">Con cariño</p>
+    <h2 class="section-title">Sugerencia de Regalos</h2>
+    <div class="ornament"><div class="ornament-diamond"></div></div>
+    <div class="regalos-container">
+        <div class="regalos-card">
+            <img src="sobre.png" alt="Sobres" loading="lazy" decoding="async" style="width:220px;height:auto;margin:-2rem auto -1rem;display:block;"/>
+            <span class="regalos-icono">✦</span>
+            <p class="regalos-leyenda">
+                "Tu presencia es el regalo más importante para nosotros. Se dispondrá de una urna de sobres el día del evento, pero si deseas obsequiarnos algo más, con mucho cariño lo recibiremos"
+            </p>
+        </div>
+    </div>
+</section>
+
+<hr class="divisor-elegante">
+
+<!-- FOTO 4 -->
+<div class="foto-reveal foto-vertical reveal-obs reveal-der">
+    <div class="foto-reveal-marco">
+        <div class="foto-reveal-img"><img src="foto_4.jpg" alt="Sofía y Alejandro" loading="lazy" decoding="async"></div>
+    </div>
+</div>
+
+<hr class="divisor-elegante">
+
+<!-- ══════════ TICKET / PASE ══════════ -->
+<section class="pase-section" id="pase">
+    <p class="section-label">Tu Pase de Entrada</p>
+    <div class="ornament"><div class="ornament-diamond"></div></div>
+
+    <div class="ticket-card">
+
+        <div class="ticket-lateral">
+            <span class="ticket-lateral-text">PASE DE ENTRADA</span>
+        </div>
+
+        <div class="ticket-body">
+
+            <div class="ticket-header">
+                <p class="ticket-supra">✦ Boda ✦</p>
+                <img src="nombre.png" alt="Sofía y Alejandro" class="ticket-nombres-img" style="width:300px;height:auto;margin:-3rem auto -3rem;display:block;"/>
+                <p class="ticket-fecha-lugar">24 · 10 · 2027 &nbsp;-&nbsp; Salón Las Palmas</p>
+            </div>
+
+            <div class="ticket-cut">
+                <div class="ticket-notch ticket-notch-l"></div>
+                <div class="ticket-dashes"></div>
+                <div class="ticket-notch ticket-notch-r"></div>
+            </div>
+
+            <div class="ticket-datos">
+                <div class="ticket-dato-group">
+                    <p class="ticket-dato-label">Invitado(a) / Familia</p>
+                    <p id="ticket-invitado" class="ticket-dato-valor nombre-largo">—</p>
+                </div>
+
+                <div class="ticket-fila-baja">
+                    <div class="ticket-dato-group">
+                        <p class="ticket-dato-label">Pases</p>
+                        <p id="ticket-pases" class="ticket-dato-valor ticket-dato-grande">—</p>
+                    </div>
+                    <div class="ticket-dato-group" id="ticket-tipo-group" style="display:none;">
+                        <p class="ticket-dato-label">Invitación</p>
+                        <span id="ticket-tipo" class="ticket-dato-tipo"></span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="ticket-pie">Favor de presentar este pase al ingresar al evento</p>
+
+        </div>
+    </div>
+</section>
+
+<hr class="divisor-elegante">
+
+<!-- ══════════ RSVP ══════════ -->
+<section id="rsvp" class="rsvp-section">
+    <div id="rsvp-container">
+        <h2 class="section-title2">Confirma tu Asistencia</h2>
+        <br><br>
+
+        <div id="rsvp-form-content">
+            <p class="rsvp-tipo-invitado" style="color:#f3eee2;margin-bottom:.3rem;">Estimado(a): <strong id="rsvp-nombre-display">Invitado</strong></p>
+            <p class="rsvp-tipo-invitado" id="rsvp-tipo-invitado" style="display:none;"></p>
+
+            <div class="pases-selector" id="pases-selector" style="display:none;">
+                <span class="pases-selector-label">Número de pases a confirmar</span>
+                <div class="pases-selector-control">
+                    <button type="button" id="pases-menos" aria-label="Menos pases">−</button>
+                    <span class="pases-selector-valor" id="pases-selector-valor">1</span>
+                    <button type="button" id="pases-mas" aria-label="Más pases">+</button>
+                </div>
+            </div>
+
+            <div class="rsvp-botones">
+                <button id="btn-si" class="rsvp-btn rsvp-btn-si" onclick="seleccionarRespuesta('Sí asistiré')">
+                    <span class="rsvp-btn-icon">💍</span>
+                    <span class="rsvp-btn-texto">¡Sí asistiré!</span>
+                </button>
+                <button id="btn-no" class="rsvp-btn rsvp-btn-no" onclick="seleccionarRespuesta('No podré asistir')">
+                    <span class="rsvp-btn-icon">💌</span>
+                    <span class="rsvp-btn-texto">No podré asistir</span>
+                </button>
+            </div>
+
+            <button class="btn-confirmar-rsvp" onclick="enviarRSVP()">
+                Confirmar Asistencia
+            </button>
+            <p class="rsvp-nota">Tu respuesta nos ayuda a una mejor organización.<br>Recuerda enviar el formulario una sola vez.</p>
+        </div>
+
+        <div id="rsvp-success" style="display:none;" class="rsvp-success-container">
+            <div class="success-card">
+                <div class="success-icon-wrapper">
+                    <span id="success-emoji" class="success-icon">💍</span>
+                    <div class="success-pulse"></div>
+                </div>
+                <h3 id="success-title" class="success-title">¡Confirmación Recibida!</h3>
+                <p id="success-text" class="success-text">
+                    Muchas gracias, hemos registrado tu respuesta correctamente.
+                </p>
+                <div class="success-divider"></div>
+                <p id="success-footer" class="success-footer"></p>
+            </div>
+        </div>
+
+        <!-- FORMULARIO EJEMPLO (Sin datos reales de destino) -->
+        <form id="form-google-oculto"
+              method="POST"
+              target="iframe-envio"
+              action="#"
+              style="display:none;">
+            <input type="hidden" name="entry.000000000" id="f-nombre">
+            <input type="hidden" name="entry.000000000" id="f-pases">
+            <input type="hidden" name="entry.000000000" id="f-asistencia">
+            <input type="hidden" name="entry.000000000" id="f-tipo">
+            <input type="hidden" name="entry.000000000" id="f-folio">
+        </form>
+        <iframe name="iframe-envio" id="iframe-envio" style="display:none;"></iframe>
+
+    </div>
+</section>
+
+<!-- ══════════ CIERRE ══════════ -->
+<section class="cierre-section" id="cierre">
+    <div class="cierre-mensaje reveal reveal-obs">
+        <p class="cierre-label">Con todo nuestro cariño</p>
+        <h2 class="cierre-titulo">Te esperamos</h2>
+        <div class="gold-line" style="margin:0 auto 1rem;"></div>
+        <p class="cierre-texto">
+            Tu presencia es muy importante para nosotros.<br>
+            Será un honor compartir contigo esta noche tan especial; ahí estaremos esperándote para celebrar, brindar y comenzar juntos esta nueva etapa.
+        </p>
+        <p class="cierre-firma">Sofía &amp; Alejandro</p>
+    </div>
+
+    <!-- FOTO 5 -->
+    <div class="foto-reveal foto-vertical reveal-obs reveal-izq">
+        <div class="foto-reveal-marco">
+            <div class="foto-reveal-img"><img src="foto_5.jpg" alt="Sofía y Alejandro" loading="lazy" decoding="async"></div>
+        </div>
+    </div>
+</section>
+
+<button id="btn-musica" onclick="toggleMusica()">
+    <span id="musica-icon">🔊</span>
+</button>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <img class="footer-firma" src="Firma 3.png" alt="By Angel Trejo · AT Design Studio" loading="lazy" decoding="async"/>
+  <p class="footer-copy">
+    © 2026 AT Design Studio  <br> <a href="https://www.facebook.com/AngelTrejo88" class="footer-link" style="font-size:.7rem;color:#ffff">By: Angel Trejo</a> <br> Todos los derechos reservados<br>
+    Durango, Dgo. · México 🇲🇽
+  </p>
+</footer>
+
+<button id="btn-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver al inicio">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
+  </svg>
+</button>
+
+<script src="script.js" defer></script>
+</body>
+</html>
