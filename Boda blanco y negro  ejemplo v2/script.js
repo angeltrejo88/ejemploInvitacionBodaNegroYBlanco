@@ -383,7 +383,7 @@ function enviarRSVP() {
         obs.unobserve(en.target);
       }
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -4% 0px' });
+  }, { threshold: 0.05, rootMargin: '30px 0px 30px 0px' });
   els.forEach(el => io.observe(el));
 })();
 

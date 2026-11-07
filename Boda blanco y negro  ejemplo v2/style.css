@@ -33,13 +33,21 @@
   --negro:       #000000bd;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
 
 body {
   font-family: 'Nunito', sans-serif;
   background: #f7f4ec;
   color: var(--oscuro);
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
 }
 
 /* ══ DIVISOR ══ */
@@ -319,6 +327,11 @@ margin-top: -35.8rem;
   display: block;
   filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.12));
   transform: scale(1.48);
+}
+@media (max-width: 480px) {
+  .hero-name-img {
+    max-width: 235px;
+  }
 }
 
 .hero-fecha {
@@ -1208,6 +1221,9 @@ footer::before {
 .foto-portada {
   position: relative;
   background: #0a0a0a;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
 }
 .foto-portada-marco {
   position: relative;
@@ -1233,18 +1249,10 @@ footer::before {
   will-change: transform;
 }
 .foto-portada.visible .foto-portada-marco img { transform: scale(1); }
-.foto-portada-marco::after {   /* degradado suave arriba/abajo */
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(10,10,10,.5) 0%, transparent 20%, transparent 76%, rgba(10,10,10,.5) 100%);
-  pointer-events: none;
-}
-.foto-portada::before {         /* marco dorado interior */
+.foto-portada-marco::before {   /* marco dorado interior ajustado al marco de la foto */
   content: '';
   position: absolute;
   inset: 14px;
-  max-width: calc(1100px - 28px);
-  margin: 0 auto;
   border: 1px solid rgba(201,168,76,.75);
   z-index: 3;
   pointer-events: none;
@@ -1252,7 +1260,13 @@ footer::before {
   transform: scale(1.03);
   transition: opacity 1.2s ease .9s, transform 1.2s ease .9s;
 }
-.foto-portada.visible::before { opacity: 1; transform: scale(1); }
+.foto-portada.visible .foto-portada-marco::before { opacity: 1; transform: scale(1); }
+.foto-portada-marco::after {   /* degradado suave arriba/abajo */
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10,10,10,.5) 0%, transparent 20%, transparent 76%, rgba(10,10,10,.5) 100%);
+  pointer-events: none;
+}
 .foto-portada-linea {
   height: 3px;
   background: linear-gradient(90deg, transparent, var(--dorado), transparent);
@@ -1264,10 +1278,16 @@ footer::before {
   margin: 0;
   display: flex;
   justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 .foto-reveal-marco {
   position: relative;
   width: 100%;
+  max-width: 100%;
+  background: #0d0d0d;
+  overflow: hidden;
   border-top: 1px solid var(--dorado);
   border-bottom: 1px solid var(--dorado);
 }
@@ -1357,10 +1377,10 @@ footer::before {
 
 /* En pantallas grandes se centran con ancho máximo para que no se vean gigantes */
 @media (min-width: 700px) {
-  .foto-vertical   .foto-reveal-marco { max-width: 480px; }
-  .foto-horizontal .foto-reveal-marco { max-width: 900px; }
+  .foto-vertical   .foto-reveal-marco { max-width: 480px; border-radius: 4px; }
+  .foto-horizontal .foto-reveal-marco { max-width: 900px; border-radius: 4px; }
   .foto-reveal { padding: 3rem 1.5rem; }
-  .foto-reveal-marco { border: 1px solid rgba(201,168,76,.5); }
+  .foto-reveal-marco { border: 1px solid rgba(201,168,76,.5); box-shadow: 0 10px 30px rgba(0,0,0,0.18); }
 }
 
 /* Revelado genérico de textos/bloques */
@@ -1471,7 +1491,7 @@ footer::before {
 
 @media (prefers-reduced-motion: reduce) {
   .reveal, .foto-reveal-img, .foto-reveal-img img, .foto-portada-marco, .foto-portada-marco img,
-  .foto-reveal-marco::after, .foto-portada::before,
+  .foto-reveal-marco::after, .foto-portada-marco::before,
   .sobre-art, .sobre-art::before, .sobre-bg-img {
     animation: none !important;
     transition: none !important;
@@ -1479,7 +1499,7 @@ footer::before {
   .reveal { opacity: 1; transform: none; }
   .foto-reveal-img, .foto-portada-marco { clip-path: none; }
   .foto-reveal-img img, .foto-portada-marco img { transform: none; }
-  .foto-reveal-marco::after, .foto-portada::before { opacity: 1; transform: none; }
+  .foto-reveal-marco::after, .foto-portada-marco::before { opacity: 1; transform: none; }
   .petal, .sparkle { display: none !important; }
 }
 
