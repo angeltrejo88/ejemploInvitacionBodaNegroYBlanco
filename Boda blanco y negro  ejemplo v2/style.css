@@ -38,6 +38,14 @@ html {
   overflow-x: hidden;
   width: 100%;
   max-width: 100vw;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 body {
@@ -48,6 +56,8 @@ body {
   width: 100%;
   max-width: 100vw;
   position: relative;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 /* ══ DIVISOR ══ */
@@ -147,20 +157,26 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   animation: sobreFlota 3.6s ease-in-out infinite;
 }
 .sobre-art::before {
   content: '';
   position: absolute;
-  inset: 8% 4%;
+  width: min(92%, 360px);
+  height: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: radial-gradient(ellipse at center, rgba(201,168,76,.38) 0%, transparent 68%);
   filter: blur(18px);
   animation: sobreBrillo 3.6s ease-in-out infinite;
   z-index: 0;
+  pointer-events: none;
 }
 @keyframes sobreFlota {
-  0%, 100% { transform: translateY(0) rotate(-.6deg); }
-  50%      { transform: translateY(-9px) rotate(.6deg); }
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
 }
 @keyframes sobreBrillo {
   0%, 100% { opacity: .55; }
@@ -173,6 +189,7 @@ body {
   max-width: 100%;
   max-height: 38vh;
   height: auto;
+  margin: 0 auto;
   display: block;
   filter: drop-shadow(0 14px 26px rgba(0,0,0,0.55));
   transition: transform .4s ease;
@@ -741,6 +758,21 @@ section { padding: 5rem 1.5rem; }
   color: rgba(255,255,255,0.88);
   max-width: 500px;
   margin: 0 auto;
+}
+.momentos-silueta-img {
+  width: 160px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 0.5rem;
+  transform: translateX(-7px);
+}
+.regalos-sobre-img {
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 0.5rem;
 }
 
 
